@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>RF Online - Cadastro de Jogadores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .btn {
+      background-color: #d00;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #a00;
+    }
+
+    /* Navbar estilizada */
+    .navbar {
+      border-bottom: 2px solid #d00;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #d00 !important;
+    }
+
+    /* Estilização do flash messages */
+    .alert {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Footer estilizado */
+    footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      margin-top: auto;
+      border-top: 2px solid #d00;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .social-icons a {
+      color: #d00;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Melhorada -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand text-danger fw-bold" href="#">RF Codex</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="/">Início</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/users/new">Cadastro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center mt-4">
+    <h1 class="text-danger">RF Online - Codex Games</h1>
+  </header>
+
+  <!-- Flash Messages -->
+  <div class="container">
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+  <!-- Footer Melhorado -->
+  <footer>
+    <p>&copy; Codex Games 2025</p>
+    <div class="social-icons mt-2">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

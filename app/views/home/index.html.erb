@@ -1,0 +1,27 @@
+<div class="container text-center mt-5">
+  <h1 class="mb-4 text-danger fw-bold">Status do Servidor</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card text-light bg-dark shadow-lg mb-3">
+        <div class="card-body">
+          <h4 class="card-title">Servidor de Contas</h4>
+          <span class="fs-4 fw-bold <%= @login_server_online ? 'text-success' : 'text-danger' %>">
+            <%= @login_server_online ? "🟢 Online" : "🔴 Offline" %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <div class="card text-light bg-dark shadow-lg">
+        <div class="card-body">
+          <h4 class="card-title">Servidor de Mundo</h4>
+          <span class="fs-4 fw-bold <%= @world_server_online ? 'text-success' : 'text-danger' %>">
+            <%= @world_server_online ? "🟢 Online" : "🔴 Offline" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

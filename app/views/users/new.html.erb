@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4" style="max-width: 500px; margin: auto; background: #222; color: white; border-radius: 10px;">
+    <h2 class="text-center text-danger">Cadastro de Usuário</h2>
+
+    <%= form_with(model: @rf_account, url: users_path, local: true, class: "needs-validation") do |form| %>
+      <div class="mb-3">
+        <%= form.label :login, "Login", class: "form-label" %>
+        <%= form.text_field :login, required: true, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :senha, "Senha", class: "form-label" %>
+        <%= form.password_field :senha, required: true, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :birthdate, "Data de Nascimento", class: "form-label" %>
+        <%= form.date_field :birthdate, required: true, class: "form-control" %>
+      </div>
+
+      <div class="text-center">
+        <%= form.submit "Cadastrar", class: "btn btn-danger w-100" %>
+      </div>
+    <% end %>
+  </div>
+</div>

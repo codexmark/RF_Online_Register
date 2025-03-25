@@ -1,0 +1,16 @@
+default: &default
+  adapter: sqlserver
+  host: 192.168.1.10 // IP Address of the server
+  username: sa       // SQL Server username
+  password: "12345" // SQL Server password
+  mode: dblib
+  azure: false
+
+development:
+  primary:
+    <<: *default
+    database: RF_User
+
+  billing:
+    <<: *default
+    database: BILLING

@@ -1,0 +1,38 @@
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+  }
+  
+  .status-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .status-box {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.2);
+    width: 250px;
+  }
+  
+  .status-label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .online {
+    background: #28a745;
+    color: white;
+  }
+  
+  .offline {
+    background: #dc3545;
+    color: white;
+  }
+  
